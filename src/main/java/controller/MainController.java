@@ -64,14 +64,13 @@ public class MainController {
         selectedDate = LocalDateTime.now().toLocalDate();
         datePicker.setValue(selectedDate);
 
-
-        //do tego wysyłam datę, która jest konwertowana przez ConnectionHandler
+        //send LocalDateTime it will be converter by the ConnectionHandler
         connectionHandler = new ConnectionHandler(selectedDate);
+        setViewSelectionListeners();
         setViews();
 
         addTextValueChangeListener(textFieldFrom);
         addTextValueChangeListener(textFieldTo);
-
     }
 
 
@@ -145,10 +144,27 @@ public class MainController {
 
     @FXML
     public void addSelectedItemClicked(){
-        TreeItem<String> selectedItem = (TreeItem<String>) treeViewBornDeath.getSelectionModel().getSelectedItem();
-        System.out.println(selectedItem.getValue());
+        addSelectedItem(treeViewBornDeath);
+        addSelectedItem(treeViewEvents);
+        addSelectedItem(treeViewSwieta);
+    }
 
-        listViewChoosenEvents.getItems().add(selectedItem.getValue());
+    //only one view selected at the time
+    private void setViewSelectionListeners(){
+        TreeView[] allViews = {treeViewSwieta, treeViewEvents, treeViewBornDeath};
+
+        for(int i = 0 ; i < 3 ; i++) {
+            TreeView firstTmp = allViews[(i + 1) % 3];
+            TreeView secondTmp = allViews[(i + 2) % 3];
+
+            allViews[i].getSelectionModel().selectedItemProperty().addListener(((observable, oldSelection, newSelection) -> {
+                if (newSelection != null) {
+                    firstTmp.getSelectionModel().clearSelection();
+                    secondTmp.getSelectionModel().clearSelection();
+                }
+            }
+            ));
+        }
 
     }
 
@@ -274,5 +290,20 @@ public class MainController {
         }
 
         return false;
+    }
+
+    private void addSelectedItem(TreeView treeView){
+        MultipleSelectionModel selectionModel = treeView.getSelectionModel();
+
+        //if there's a valid selection
+        if(!selectionModel.isEmpty()) {
+            TreeItem<String> selectedItem = (TreeItem<String>) selectionModel.getSelectedItem();
+
+            //trzeba dodać usuwanie zaznaczenia z innych viewów, np. 3listenery i potem funkcja, która wyłącza wszystkie poza jednym, można zrobić jakąś mapą albo enumem
+
+            //add it only if selected node doesn't have children so it's person on event selected not category or year
+            if (selectedItem.getChildren().isEmpty())
+                listViewChoosenEvents.getItems().add(selectedItem.getValue());
+        }
     }
 }

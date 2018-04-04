@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dd6140f7-42b9-4516-aa4f-956bea225b6e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainWindow.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainWindow.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,19 +18,19 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="150" column="70" lean-forward="true" selection-start-line="150" selection-start-column="70" selection-end-line="150" selection-end-column="70" />
+            <state relative-caret-position="388">
+              <caret line="165" column="15" lean-forward="true" selection-start-line="165" selection-start-column="15" selection-end-line="165" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#initialize#0;class#MainController#0" expanded="false" />
                 <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
                 <element signature="method#textFieldFromAction#0;class#MainController#0" expanded="false" />
                 <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
                 <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
+                <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
                 <element signature="method#setViews#0;class#MainController#0" expanded="false" />
-                <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
                 <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
                 <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
+                <element signature="method#addSelectedItem#0;class#MainController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -40,8 +39,8 @@
       <file leaf-file-name="ConnectionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+            <state relative-caret-position="329">
+              <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#529#530#0" expanded="true" />
@@ -429,15 +428,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controller/MainController.java</url>
-          <line>170</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -448,15 +439,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#MainController#0" expanded="false" />
             <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#textFieldFromAction#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
+            <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViews#0;class#MainController#0" expanded="false" />
-            <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
+            <element signature="method#addSelectedItem#0;class#MainController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -517,15 +508,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#MainController#0" expanded="false" />
             <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#textFieldFromAction#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
+            <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViews#0;class#MainController#0" expanded="false" />
-            <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
+            <element signature="method#addSelectedItem#0;class#MainController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -605,15 +596,15 @@
           <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#MainController#0" expanded="false" />
             <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#textFieldFromAction#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
+            <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViews#0;class#MainController#0" expanded="false" />
-            <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
+            <element signature="method#addSelectedItem#0;class#MainController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -678,8 +669,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        <state relative-caret-position="329">
+          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#529#530#0" expanded="true" />
@@ -705,19 +696,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="150" column="70" lean-forward="true" selection-start-line="150" selection-start-column="70" selection-end-line="150" selection-end-column="70" />
+        <state relative-caret-position="388">
+          <caret line="165" column="15" lean-forward="true" selection-start-line="165" selection-start-column="15" selection-end-line="165" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initialize#0;class#MainController#0" expanded="false" />
             <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#textFieldFromAction#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
+            <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViews#0;class#MainController#0" expanded="false" />
-            <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
+            <element signature="method#addSelectedItem#0;class#MainController#0" expanded="false" />
           </folding>
         </state>
       </provider>
