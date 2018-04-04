@@ -67,6 +67,7 @@ public class ConnectionHandler {
         //extract webcontent
         Elements swieta = docWiki.select(".mw-parser-output > ul");
 
+
         boolean first_element = false;
 
         //if we want to check święta
@@ -88,27 +89,22 @@ public class ConnectionHandler {
             Elements listaSwiat = swieto.select("ul");
             if (!listaSwiat.isEmpty()) {
 
-                System.out.println(swieto.select("a").get(0).text());//Nazwa kraju/kategorii
                 String country = swieto.select("a").get(0).text();
                 countryItem.setValue(country);
 
 
                 for (Element zListy : listaSwiat.get(0).select("li")) {
-                    System.out.println(zListy.text());//kolejne święta z listy świąt
                     TreeItem<String> swietoItem = new TreeItem<String>(zListy.text());
                     countryItem.getChildren().add(swietoItem);
                 }
 
-                System.out.println("NEXT");//tak żebym miał pewność że przetwarzam kolejny element
             } else {
                 //nie działa tak jak chce, chyba przelatuje też po dzieciach, w sensie główny selector swietaImieniny.get(0).select("li")
-                System.out.println("Pojedynczy element:");
                 String[] swietoString = swieto.text().split(" – ", 2);
 
                 countryItem.setValue(swietoString[0]);
                 TreeItem<String> swietoItem = new TreeItem<String>(swietoString[1]);
                 countryItem.getChildren().add(swietoItem);
-                System.out.println(swietoString[0]);
             }
 
             rootItem.getChildren().add(countryItem);
@@ -151,8 +147,13 @@ public class ConnectionHandler {
         //extract webcontent
         Elements extractedElements = docWiki.select(".mw-parser-output > ul");
 
+        int offset = 0;//if there's astronomy field the offset for born and death fields is 1 (because of structure of wikipedia)
+
+        if( (extractedElements.size() == 6) && (whichField == WikiField.Born || whichField == WikiField.Dead) ) //field check in case if some other elements would be called in future
+            offset = 1;//set proper offset if there's an astronomy field
+
         // > li aby pobierać tylko "najwyższe" elementy, żeby pomijać powtórzenia przy zagnieżdżonej liście
-        for (Element element : extractedElements.get(whichField.fieldNumber()).select("> li")) {
+        for (Element element : extractedElements.get(whichField.fieldNumber() + offset).select("> li")) {
 
             TreeItem<String> bornDeathItem = new TreeItem<String>(whichField.fieldName());
             bornDeathItem.setExpanded(true);

@@ -91,11 +91,6 @@ public class MainController {
     }
 
     @FXML
-    public void textFieldFromAction(){
-
-    }
-
-    @FXML
     public void filterYearsButtonClicked() {
 
         Integer filterFrom, filterTo;
@@ -149,7 +144,7 @@ public class MainController {
         addSelectedItem(treeViewSwieta);
     }
 
-    //only one view selected at the time
+    //only the one TreeView selected at the time
     private void setViewSelectionListeners(){
         TreeView[] allViews = {treeViewSwieta, treeViewEvents, treeViewBornDeath};
 
@@ -299,11 +294,12 @@ public class MainController {
         if(!selectionModel.isEmpty()) {
             TreeItem<String> selectedItem = (TreeItem<String>) selectionModel.getSelectedItem();
 
-            //trzeba dodać usuwanie zaznaczenia z innych viewów, np. 3listenery i potem funkcja, która wyłącza wszystkie poza jednym, można zrobić jakąś mapą albo enumem
-
             //add it only if selected node doesn't have children so it's person on event selected not category or year
-            if (selectedItem.getChildren().isEmpty())
-                listViewChoosenEvents.getItems().add(selectedItem.getValue());
+            if (selectedItem.getChildren().isEmpty()) {
+                String parentValue = selectedItem.getParent().getValue();
+                String parentParentValue =  selectedItem.getParent().getParent().getValue();
+                listViewChoosenEvents.getItems().add( parentParentValue + " - " + parentValue + " - " + selectedItem.getValue());
+            }
         }
     }
 }
