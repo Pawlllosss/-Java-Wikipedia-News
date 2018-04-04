@@ -18,6 +18,7 @@
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -44,7 +45,7 @@
          <children>
             <Label text="Wydarzenia w Polsce" />
             <Separator prefWidth="200.0" />
-            <TreeView fx:id="treeViewPolandEvents" prefHeight="200.0" prefWidth="200.0" />
+            <TreeView fx:id="treeViewEvents" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </VBox>
       <VBox layoutX="10.0" layoutY="210.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
@@ -77,5 +78,13 @@
             <Button mnemonicParsing="false" onAction="#filterYearsButtonClicked" text="FiltrujPoDatach" />
          </children>
       </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <children>
+            <TextField fx:id="textFieldSearchPhrase" />
+            <Button mnemonicParsing="false" onAction="#searchPhraseButtonClicked" text="Szukaj" />
+         </children>
+      </VBox>
+      <ListView fx:id="listViewChoosenEvents" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#addSelectedItemClicked" text="Dodaj do listy" GridPane.columnIndex="2" GridPane.rowIndex="2" />
    </children>
 </GridPane>

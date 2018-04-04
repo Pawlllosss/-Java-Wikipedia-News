@@ -21,15 +21,20 @@ public class MainController {
     private ConnectionHandler connectionHandler;
     private LocalDate selectedDate;
     private LinkedHashMap<Integer, TreeItem<String>> hiddenBornAndDead;//as tree nodes are in sorted order this is as well
+    private LinkedHashMap<Integer, TreeItem<String>> hiddenPolandEvents;//as tree nodes are in sorted order this is as well
+    private LinkedHashMap<Integer, TreeItem<String>> hiddenWorldEvents;//as tree nodes are in sorted order this is as well
 
     @FXML
     private ListView listViewImieniny;
 
     @FXML
+    private ListView listViewChoosenEvents;
+
+    @FXML
     private TreeView treeViewSwieta;
 
     @FXML
-    private TreeView treeViewPolandEvents;
+    private TreeView treeViewEvents;
 
     @FXML
     private TreeView treeViewBornDeath;
@@ -47,9 +52,14 @@ public class MainController {
     private TextField textFieldTo;
 
     @FXML
+    private TextField textFieldSearchPhrase;
+
+    @FXML
     public void initialize(){
 
         hiddenBornAndDead = new LinkedHashMap<Integer, TreeItem<String>>();
+        hiddenPolandEvents = new LinkedHashMap<Integer, TreeItem<String>>();
+        hiddenWorldEvents = new LinkedHashMap<Integer, TreeItem<String>>();
 
         selectedDate = LocalDateTime.now().toLocalDate();
         datePicker.setValue(selectedDate);
@@ -70,7 +80,12 @@ public class MainController {
         LocalDate datePickerValue = datePicker.getValue();
 
         //if dates differ
-        if(!(datePickerValue == selectedDate )) {
+        if(datePickerValue != selectedDate ) {
+            //clear map with hidden elements so it won't be added during filtering years for the new date
+            hiddenBornAndDead.clear();
+            hiddenPolandEvents.clear();
+            hiddenWorldEvents.clear();
+
             connectionHandler.downloadNewDocument(datePickerValue);
             setViews();
         }
@@ -85,83 +100,55 @@ public class MainController {
     public void filterYearsButtonClicked() {
 
         Integer filterFrom, filterTo;
-        TreeItem<String> root = treeViewBornDeath.getRoot();
+        TreeItem<String> rootBornDeath = treeViewBornDeath.getRoot();
+        TreeItem<String> rootEvents = treeViewEvents.getRoot();
 
         System.out.println("TO JEST TEKST" + textFieldFrom.getText());
 
         if (textFieldFrom.getText().trim().isEmpty())
-            filterFrom = -99999;
+            filterFrom = -99999;//first written historical sources are dated around 3500b.c. so i think it's a fine down limit
         else
             filterFrom = Integer.parseInt(textFieldFrom.getText());
 
         if (textFieldTo.getText().trim().isEmpty())
-            filterTo = 99999;
+            filterTo = 99999;//i think it's fine upper limit
         else
             filterTo = Integer.parseInt(textFieldTo.getText());
 
-        //if there were some alternations before, then recover former state of the treeView
-        if (!hiddenBornAndDead.isEmpty()) {
-            ObservableList<TreeItem<String>> childrenList = root.getChildren();
+        filterYears(rootBornDeath, hiddenBornAndDead, filterFrom, filterTo);
+        filterYears(rootEvents.getChildren().get(0), hiddenPolandEvents, filterFrom, filterTo);
+        filterYears(rootEvents.getChildren().get(1), hiddenWorldEvents, filterFrom, filterTo);
 
-            int offset = 0;//how many items was added
 
-            int childrenListSize = childrenList.size();
+    }
 
-            for (int i = 0; i < childrenListSize - 1; i++) {
-                System.out.println(childrenList.get(i).getValue());
+    @FXML
+    public void searchPhraseButtonClicked(){
+        String searchPhrase = textFieldSearchPhrase.getText();
 
-                Iterator<Map.Entry<Integer, TreeItem<String>>> iter = hiddenBornAndDead.entrySet().iterator();
-                while (iter.hasNext()) {
-                    Map.Entry<Integer, TreeItem<String>> entry = iter.next();
+        //there is something to look for
+        if (!searchPhrase.trim().isEmpty()){
+            TreeItem<String> rootPeople = treeViewBornDeath.getRoot();
 
-                    System.out.println(entry);
-
-                    if (entry.getKey() < Integer.parseInt(childrenList.get(i + offset).getValue())) {
-                        childrenList.add(i + offset, entry.getValue());
-                        offset++;
-                        iter.remove();
-                    }//dla ostatniego powinno dodawać inaczej, bo już mogą być tylko większe
-                }
-
+            for (TreeItem<String> itemYear : rootPeople.getChildren()) {
+                for(TreeItem<String> itemBornDead: itemYear.getChildren())
+                    if( doesChildrenContainPatter(itemBornDead, searchPhrase))
+                    {
+                        itemYear.setExpanded(true);//it's not perfect because it may expand 2 child nodes even if only 1 contains search phrase
+                        break;
+                    }
             }
 
-            Iterator<Map.Entry<Integer, TreeItem<String>>> iter = hiddenBornAndDead.entrySet().iterator();
-            while (iter.hasNext()) {
-                Map.Entry<Integer, TreeItem<String>> entry = iter.next();
-
-                System.out.println(entry);
-
-                    childrenList.add(childrenListSize + offset, entry.getValue());
-                    offset++;
-                    iter.remove();
-                }
-
-        }
-
-
-        System.out.println("END OF RECOVERY");
-    //if date from is bigger than date to then do not do anything
-    if (filterFrom < filterTo) {
-        for (TreeItem<String> item : root.getChildren()) {
-            int currentItemYear = Integer.parseInt(item.getValue());
-
-
-            if ((currentItemYear < filterFrom) || (currentItemYear > filterTo)) {
-                hiddenBornAndDead.put(currentItemYear, item);//mapa jest chyba pusta - null pointer exception
-            }
         }
 
     }
 
+    @FXML
+    public void addSelectedItemClicked(){
+        TreeItem<String> selectedItem = (TreeItem<String>) treeViewBornDeath.getSelectionModel().getSelectedItem();
+        System.out.println(selectedItem.getValue());
 
-    //deleting this item from root so it doesn't exist in treeview anymore
-    for (Integer key : hiddenBornAndDead.keySet()) {
-        TreeItem<String> item = hiddenBornAndDead.get(key);
-        item.getParent().getChildren().remove(item);
-    }
-
-    System.out.println(treeViewBornDeath.getRoot().getChildren());
-
+        listViewChoosenEvents.getItems().add(selectedItem.getValue());
 
     }
 
@@ -174,7 +161,7 @@ public class MainController {
         events.setExpanded(true);
         events.getChildren().add(connectionHandler.extractContent(WikiField.PolskaEvents));
         events.getChildren().add(connectionHandler.extractContent(WikiField.WorldEvents));
-        treeViewPolandEvents.setRoot(events);
+        treeViewEvents.setRoot(events);
 
         treeViewBornDeath.setRoot(connectionHandler.extractBornDeath());
 
@@ -213,4 +200,79 @@ public class MainController {
         });
     }
 
+    private void filterYears(TreeItem<String> root, LinkedHashMap<Integer, TreeItem<String>> hiddenMap, Integer filterFrom, Integer filterTo){
+        //if there were some alternations before, then recover former state of the treeView
+        if (!hiddenMap.isEmpty()) {
+            ObservableList<TreeItem<String>> childrenList = root.getChildren();
+
+            int offset = 0;//how many items were added
+
+            int childrenListSize = childrenList.size();
+
+            //SĄ BŁĘDY JEŻELI NA LIŚCIE ZOSTAJE TYLKO JEDEN ELEMENT, MOŻNA UWZGLĘDNIĆ PRZYPADEK TYLKO DLA JEDNEGO ELEMENTU, ALBO OGARNĄĆ LOGIKĘ
+
+            for (int i = 0; i < childrenListSize - 1; i++) {
+                System.out.println(childrenList.get(i).getValue());
+
+                Iterator<Map.Entry<Integer, TreeItem<String>>> iter = hiddenMap.entrySet().iterator();
+                while (iter.hasNext()) {
+                    Map.Entry<Integer, TreeItem<String>> entry = iter.next();
+
+                    System.out.println(entry);
+
+                    if (entry.getKey() < Integer.parseInt(childrenList.get(i + offset).getValue())) {
+                        childrenList.add(i + offset, entry.getValue());
+                        offset++;
+                        iter.remove();
+                    }//dla ostatniego powinno dodawać inaczej, bo już mogą być tylko większe
+                }
+
+            }
+
+            Iterator<Map.Entry<Integer, TreeItem<String>>> iter = hiddenMap.entrySet().iterator();
+            while (iter.hasNext()) {
+                Map.Entry<Integer, TreeItem<String>> entry = iter.next();
+
+                System.out.println(entry);
+
+                childrenList.add(childrenListSize + offset, entry.getValue());
+                offset++;
+                iter.remove();
+            }
+
+        }
+
+
+        System.out.println("END OF RECOVERY");
+        //if date from is bigger than date to then do not do anything
+        if (filterFrom < filterTo) {
+            for (TreeItem<String> item : root.getChildren()) {
+                int currentItemYear = Integer.parseInt(item.getValue());
+
+
+                if ((currentItemYear < filterFrom) || (currentItemYear > filterTo)) {
+                    hiddenMap.put(currentItemYear, item);//mapa jest chyba pusta - null pointer exception
+                }
+            }
+
+        }
+
+
+        //deleting this item from root so it doesn't exist in treeview anymore
+        for (Integer key : hiddenMap.keySet()) {
+            TreeItem<String> item = hiddenMap.get(key);
+            item.getParent().getChildren().remove(item);
+        }
+
+        System.out.println(treeViewBornDeath.getRoot().getChildren());
+    }
+
+    private boolean doesChildrenContainPatter(TreeItem<String> node, String searchPhrase){
+        for( TreeItem<String> child : node.getChildren() ){
+            if(child.getValue().toLowerCase().contains(searchPhrase.toLowerCase()))
+                return true;
+        }
+
+        return false;
+    }
 }
