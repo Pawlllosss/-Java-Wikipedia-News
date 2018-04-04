@@ -65,15 +65,16 @@
             <Label text="Zakres dat" />
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <TextField />
+                  <TextField fx:id="textFieldFrom" onAction="#textFieldFromAction" />
                   <Label text=" - ">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <TextField />
+                  <TextField fx:id="textFieldTo" />
                </children>
             </HBox>
+            <Button mnemonicParsing="false" onAction="#filterYearsButtonClicked" text="FiltrujPoDatach" />
          </children>
       </VBox>
    </children>
