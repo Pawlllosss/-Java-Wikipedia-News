@@ -17,18 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="172" column="65" lean-forward="false" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="65" />
+            <state relative-caret-position="245">
+              <caret line="157" column="0" lean-forward="true" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#initialize#0;class#MainController#0" expanded="false" />
                 <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
                 <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
                 <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
                 <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
                 <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
+                <element signature="method#setViews#0;class#MainController#0" expanded="false" />
                 <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
                 <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
                 <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
@@ -38,30 +40,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnectionHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConnectionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="796">
-              <caret line="144" column="114" lean-forward="false" selection-start-line="144" selection-start-column="114" selection-end-line="144" selection-end-column="114" />
+            <state relative-caret-position="491">
+              <caret line="225" column="1" lean-forward="true" selection-start-line="225" selection-start-column="1" selection-end-line="225" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#529#530#0" expanded="true" />
-                <element signature="e#559#560#0" expanded="true" />
-                <element signature="e#616#617#0" expanded="true" />
-                <element signature="e#665#666#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+                <element signature="e#470#471#0" expanded="true" />
+                <element signature="e#527#528#0" expanded="true" />
+                <element signature="e#576#577#0" expanded="true" />
                 <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="method#extractContent#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="e#2769#2777#0" expanded="true" />
-                <element signature="e#3680#3688#0" expanded="true" />
+                <element signature="e#2680#2688#0" expanded="true" />
+                <element signature="e#3591#3599#0" expanded="true" />
                 <element signature="method#extractBornDeath#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="e#4213#4251#0" expanded="true" />
-                <element signature="e#4678#4686#0" expanded="true" />
+                <element signature="e#4124#4162#0" expanded="true" />
+                <element signature="e#4589#4597#0" expanded="true" />
                 <element signature="method#extractTreeItem#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="e#5833#5841#0" expanded="true" />
+                <element signature="e#5744#5752#0" expanded="true" />
                 <element signature="class#MonthConversion#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="e#7778#7795#0" expanded="true" />
-                <element signature="e#8373#8374#0" expanded="true" />
-                <element signature="e#8423#8424#0" expanded="true" />
+                <element signature="e#7689#7706#0" expanded="true" />
+                <element signature="e#8284#8285#0" expanded="true" />
+                <element signature="e#8334#8335#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,8 +146,8 @@
         <option value="$PROJECT_DIR$/src/main/java/mainwindow/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/content/WikipediaContent.java" />
         <option value="$PROJECT_DIR$/src/main/java/content/connection/WikiField.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
       </list>
     </option>
   </component>
@@ -442,11 +443,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#MainController#0" expanded="false" />
             <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
+            <element signature="method#setViews#0;class#MainController#0" expanded="false" />
             <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
@@ -461,23 +464,22 @@
           <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
             <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#extractContent#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#2769#2777#0" expanded="true" />
-            <element signature="e#3680#3688#0" expanded="true" />
+            <element signature="e#2680#2688#0" expanded="true" />
+            <element signature="e#3591#3599#0" expanded="true" />
             <element signature="method#extractBornDeath#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#4213#4251#0" expanded="true" />
-            <element signature="e#4678#4686#0" expanded="true" />
+            <element signature="e#4124#4162#0" expanded="true" />
+            <element signature="e#4589#4597#0" expanded="true" />
             <element signature="method#extractTreeItem#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#5833#5841#0" expanded="true" />
+            <element signature="e#5744#5752#0" expanded="true" />
             <element signature="class#MonthConversion#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#7778#7795#0" expanded="true" />
-            <element signature="e#8373#8374#0" expanded="true" />
-            <element signature="e#8423#8424#0" expanded="true" />
+            <element signature="e#7689#7706#0" expanded="true" />
+            <element signature="e#8284#8285#0" expanded="true" />
+            <element signature="e#8334#8335#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -511,11 +513,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#MainController#0" expanded="false" />
             <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
+            <element signature="method#setViews#0;class#MainController#0" expanded="false" />
             <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
@@ -530,23 +534,22 @@
           <caret line="33" column="11" lean-forward="false" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
             <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#extractContent#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#2769#2777#0" expanded="true" />
-            <element signature="e#3680#3688#0" expanded="true" />
+            <element signature="e#2680#2688#0" expanded="true" />
+            <element signature="e#3591#3599#0" expanded="true" />
             <element signature="method#extractBornDeath#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#4213#4251#0" expanded="true" />
-            <element signature="e#4678#4686#0" expanded="true" />
+            <element signature="e#4124#4162#0" expanded="true" />
+            <element signature="e#4589#4597#0" expanded="true" />
             <element signature="method#extractTreeItem#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#5833#5841#0" expanded="true" />
+            <element signature="e#5744#5752#0" expanded="true" />
             <element signature="class#MonthConversion#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#7778#7795#0" expanded="true" />
-            <element signature="e#8373#8374#0" expanded="true" />
-            <element signature="e#8423#8424#0" expanded="true" />
+            <element signature="e#7689#7706#0" expanded="true" />
+            <element signature="e#8284#8285#0" expanded="true" />
+            <element signature="e#8334#8335#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -599,11 +602,13 @@
           <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#MainController#0" expanded="false" />
             <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
+            <element signature="method#setViews#0;class#MainController#0" expanded="false" />
             <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
@@ -670,48 +675,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="172" column="65" lean-forward="false" selection-start-line="172" selection-start-column="51" selection-end-line="172" selection-end-column="65" />
+        <state relative-caret-position="491">
+          <caret line="225" column="1" lean-forward="true" selection-start-line="225" selection-start-column="1" selection-end-line="225" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
+            <element signature="e#2680#2688#0" expanded="true" />
+            <element signature="e#3591#3599#0" expanded="true" />
+            <element signature="method#extractBornDeath#0;class#ConnectionHandler#0" expanded="false" />
+            <element signature="e#4124#4162#0" expanded="true" />
+            <element signature="e#4589#4597#0" expanded="true" />
+            <element signature="method#extractTreeItem#0;class#ConnectionHandler#0" expanded="false" />
+            <element signature="e#5744#5752#0" expanded="true" />
+            <element signature="class#MonthConversion#0;class#ConnectionHandler#0" expanded="false" />
+            <element signature="e#7689#7706#0" expanded="true" />
+            <element signature="e#8284#8285#0" expanded="true" />
+            <element signature="e#8334#8335#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="157" column="0" lean-forward="true" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initialize#0;class#MainController#0" expanded="false" />
             <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
+            <element signature="method#setViews#0;class#MainController#0" expanded="false" />
             <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#doesChildrenContainPatter#0;class#MainController#0" expanded="false" />
             <element signature="method#addSelectedItem#0;class#MainController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="144" column="114" lean-forward="false" selection-start-line="144" selection-start-column="114" selection-end-line="144" selection-end-column="114" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#extractContent#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#2769#2777#0" expanded="true" />
-            <element signature="e#3680#3688#0" expanded="true" />
-            <element signature="method#extractBornDeath#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#4213#4251#0" expanded="true" />
-            <element signature="e#4678#4686#0" expanded="true" />
-            <element signature="method#extractTreeItem#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#5833#5841#0" expanded="true" />
-            <element signature="class#MonthConversion#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#7778#7795#0" expanded="true" />
-            <element signature="e#8373#8374#0" expanded="true" />
-            <element signature="e#8423#8424#0" expanded="true" />
           </folding>
         </state>
       </provider>

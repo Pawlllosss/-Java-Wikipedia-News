@@ -8,10 +8,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Calendar;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -38,9 +36,6 @@ public class MainController {
 
     @FXML
     private TreeView treeViewBornDeath;
-
-    @FXML
-    private Button connectionButton;
 
     @FXML
     private DatePicker datePicker;
@@ -112,8 +107,6 @@ public class MainController {
         filterYears(rootBornDeath, hiddenBornAndDead, filterFrom, filterTo);
         filterYears(rootEvents.getChildren().get(0), hiddenPolandEvents, filterFrom, filterTo);
         filterYears(rootEvents.getChildren().get(1), hiddenWorldEvents, filterFrom, filterTo);
-
-
     }
 
     @FXML
@@ -168,7 +161,7 @@ public class MainController {
         treeViewSwieta.setRoot(connectionHandler.extractContent(WikiField.Swieta));
 
 
-        TreeItem<String> events = new TreeItem<String>("Święta");
+        TreeItem<String> events = new TreeItem<String>("Wydarzenia");
         events.setExpanded(true);
         events.getChildren().add(connectionHandler.extractContent(WikiField.PolskaEvents));
         events.getChildren().add(connectionHandler.extractContent(WikiField.WorldEvents));
@@ -179,7 +172,6 @@ public class MainController {
     }
 
     private void addTextValueChangeListener(TextField textField){
-        //ustawia listener na polu tekstowym!!!
         textField.textProperty().addListener(new ChangeListener<String>()
         {
             @Override
@@ -187,26 +179,16 @@ public class MainController {
             {
                 String newValueAltered= newValue;
 
-                //jeżeli wpisano więcej niz 4 znaka
+                //it ensures that only 4 characters can be written into the TextField
                 if(textField.getText().length() > 4) {
                     newValueAltered = textField.getText().substring(0, 4);
                 }
 
-                //tylko cyfry!
+                //regex to ensure that only numeric value will be passed
                 newValueAltered = newValueAltered.replaceAll("[^\\d]", "");
 
                 //ustawienie zmodyfikowanej wartości
                 textField.setText(newValueAltered);
-
-                /*
-                //zrobić żeby nie powtarzało wyszukiwania przy identycznych polach
-                if (oldValue != newValueAltered)
-                {
-                    System.out.println(newValueAltered);
-
-                }*/
-
-
             }
         });
     }
@@ -294,7 +276,7 @@ public class MainController {
         if(!selectionModel.isEmpty()) {
             TreeItem<String> selectedItem = (TreeItem<String>) selectionModel.getSelectedItem();
 
-            //add it only if selected node doesn't have children so it's person on event selected not category or year
+            //add it only if selected node doesn't have children so it's person or event selected not category or year
             if (selectedItem.getChildren().isEmpty()) {
                 String parentValue = selectedItem.getParent().getValue();
                 String parentParentValue =  selectedItem.getParent().getParent().getValue();

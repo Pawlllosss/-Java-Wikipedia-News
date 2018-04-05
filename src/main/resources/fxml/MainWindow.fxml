@@ -57,7 +57,7 @@
       </VBox>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
-            <Button fx:id="connectionButton" mnemonicParsing="false" onAction="#connectionClick" text="Connection" />
+            <Button mnemonicParsing="false" onAction="#connectionClick" text="Connection" />
             <DatePicker fx:id="datePicker" />
          </children>
       </VBox>

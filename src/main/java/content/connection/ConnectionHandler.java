@@ -12,8 +12,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
-//16_sierpnia WSZYSTKO SIĘ ROZJEŻDŻA, bo jest zakładka astronomia(trzeba to uwzględnić)
-
 public class ConnectionHandler {
     Document docWiki;
 
