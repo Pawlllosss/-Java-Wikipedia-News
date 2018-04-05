@@ -86,5 +86,6 @@
       </VBox>
       <ListView fx:id="listViewChoosenEvents" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <Button mnemonicParsing="false" onAction="#addSelectedItemClicked" text="Dodaj do listy" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#unexpandAllClicked" text="Zwiń wszystko" GridPane.rowIndex="3" />
    </children>
 </GridPane>

@@ -60,7 +60,7 @@ public class ConnectionHandler {
     public TreeItem<String> extractContent(WikiField whichField) {
         //create an item for the view
         TreeItem<String> rootItem = new TreeItem<String>(whichField.fieldName());
-        rootItem.setExpanded(true);
+        //rootItem.setExpanded(true);
 
         //extract webcontent
         Elements swieta = docWiki.select(".mw-parser-output > ul");
@@ -81,7 +81,7 @@ public class ConnectionHandler {
             }
 
             TreeItem<String> countryItem = new TreeItem<String>();
-            countryItem.setExpanded(true);
+            //countryItem.setExpanded(true);
 
             //sprawdzam czy jest więcej niż jedno świeto
             Elements listaSwiat = swieto.select("ul");

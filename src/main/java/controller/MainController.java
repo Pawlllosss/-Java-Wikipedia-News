@@ -7,7 +7,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Iterator;
@@ -137,6 +136,13 @@ public class MainController {
         addSelectedItem(treeViewSwieta);
     }
 
+    @FXML
+    public void unexpandAllClicked(){
+        unexpandItems(treeViewBornDeath.getRoot());
+        unexpandItems(treeViewEvents.getRoot());
+        unexpandItems(treeViewSwieta.getRoot());
+    }
+
     //only the one TreeView selected at the time
     private void setViewSelectionListeners(){
         TreeView[] allViews = {treeViewSwieta, treeViewEvents, treeViewBornDeath};
@@ -196,6 +202,8 @@ public class MainController {
     private void filterYears(TreeItem<String> root, LinkedHashMap<Integer, TreeItem<String>> hiddenMap, Integer filterFrom, Integer filterTo){
         //if there were some alternations before, then recover former state of the treeView
         if (!hiddenMap.isEmpty()) {
+            recoverList(root, hiddenMap, filterFrom, filterTo);
+            /*
             ObservableList<TreeItem<String>> childrenList = root.getChildren();
 
             int offset = 0;//how many items were added
@@ -232,7 +240,7 @@ public class MainController {
                 offset++;
                 iter.remove();
             }
-
+            */
         }
 
 
@@ -248,6 +256,10 @@ public class MainController {
                 }
             }
 
+            //expand filtered years
+            expandItems(root);
+
+
         }
 
 
@@ -258,6 +270,44 @@ public class MainController {
         }
 
         System.out.println(treeViewBornDeath.getRoot().getChildren());
+    }
+
+    private void recoverList(TreeItem<String> root, LinkedHashMap<Integer, TreeItem<String>> hiddenMap, Integer filterFrom, Integer filterTo){
+        ObservableList<TreeItem<String>> childrenList = root.getChildren();
+
+        int offset = 0;//how many items were added
+
+        int childrenListSize = childrenList.size();
+        Iterator<Map.Entry<Integer, TreeItem<String>>> hiddenMapIterator;
+        Map.Entry<Integer, TreeItem<String>> removedTreeItem;
+
+
+        for (int i = 0; i < childrenListSize; i++) {
+            System.out.println(childrenList.get(i).getValue());
+
+            hiddenMapIterator = hiddenMap.entrySet().iterator();
+            //while there are some remaining nodes in map of nodes removed from the tree
+            while (hiddenMapIterator.hasNext()) {
+                removedTreeItem = hiddenMapIterator.next();
+                //there's a key with stores a year of node if it's smaller than the year stored in the node that remains in the tree then add it
+                if (removedTreeItem.getKey() < Integer.parseInt(childrenList.get(i + offset).getValue())) {
+                    childrenList.add(i + offset, removedTreeItem.getValue());
+                    offset++;
+                    hiddenMapIterator.remove();
+                }
+            }
+
+        }
+
+        //add all remaining nodes at the end of the tree
+        hiddenMapIterator = hiddenMap.entrySet().iterator();
+        while (hiddenMapIterator.hasNext()) {
+            removedTreeItem = hiddenMapIterator.next();
+
+            childrenList.add(childrenListSize + offset, removedTreeItem.getValue());
+            offset++;
+            hiddenMapIterator.remove();
+        }
     }
 
     private boolean doesChildrenContainPatter(TreeItem<String> node, String searchPhrase){
@@ -282,6 +332,24 @@ public class MainController {
                 String parentParentValue =  selectedItem.getParent().getParent().getValue();
                 listViewChoosenEvents.getItems().add( parentParentValue + " - " + parentValue + " - " + selectedItem.getValue());
             }
+        }
+    }
+
+    private void expandItems(TreeItem<String> root){
+        for (TreeItem<String> item : root.getChildren()) {
+            item.setExpanded(true);
+            //look recursively
+            if(!item.getChildren().isEmpty())
+                expandItems(item);
+        }
+    }
+
+    private void unexpandItems(TreeItem<String> root){
+        for (TreeItem<String> item : root.getChildren()){
+            item.setExpanded(false);
+            //look recursively
+            if(!item.getChildren().isEmpty())
+                unexpandItems(item);
         }
     }
 }
