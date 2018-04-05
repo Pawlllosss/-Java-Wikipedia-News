@@ -4,11 +4,14 @@
     <list default="true" id="dd6140f7-42b9-4516-aa4f-956bea225b6e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/content/connection/WikiField.java" afterPath="$PROJECT_DIR$/src/main/java/content/connection/WikiField.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mainwindow/Main.java" afterPath="$PROJECT_DIR$/src/main/java/mainwindow/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/MainWindow.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/MainWindow.fxml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/content/connection/ConnectionHandler$MonthConversion.class" afterPath="$PROJECT_DIR$/target/classes/content/connection/ConnectionHandler$MonthConversion.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/content/connection/ConnectionHandler.class" afterPath="$PROJECT_DIR$/target/classes/content/connection/ConnectionHandler.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MainController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/MainController$1.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/controller/MainController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mainwindow/Main.class" afterPath="$PROJECT_DIR$/target/classes/mainwindow/Main.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,21 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="184">
+              <caret line="150" column="16" lean-forward="false" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#initialize#0;class#MainController#0" expanded="false" />
-                <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
                 <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
                 <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
                 <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
+                <element signature="method#removeSelectedItemClicked#0;class#MainController#0" expanded="false" />
                 <element signature="method#unexpandAllClicked#0;class#MainController#0" expanded="false" />
                 <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
                 <element signature="method#setViews#0;class#MainController#0" expanded="false" />
+                <element signature="e#6111#6119#0" expanded="true" />
                 <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
                 <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
                 <element signature="method#recoverList#0;class#MainController#0" expanded="false" />
@@ -51,24 +54,20 @@
       <file leaf-file-name="ConnectionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="523">
+              <caret line="201" column="1" lean-forward="true" selection-start-line="201" selection-start-column="1" selection-end-line="201" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#downloadNewDocument#0;class#ConnectionHandler#0" expanded="false" />
                 <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="method#extractContent#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="e#2682#2690#0" expanded="true" />
-                <element signature="e#3595#3603#0" expanded="true" />
-                <element signature="method#extractBornDeath#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="e#4128#4166#0" expanded="true" />
-                <element signature="e#4593#4601#0" expanded="true" />
-                <element signature="method#extractTreeItem#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="e#5748#5756#0" expanded="true" />
-                <element signature="class#MonthConversion#0;class#ConnectionHandler#0" expanded="false" />
-                <element signature="e#7693#7710#0" expanded="true" />
-                <element signature="e#8288#8289#0" expanded="true" />
-                <element signature="e#8338#8339#0" expanded="true" />
+                <element signature="e#2442#2450#0" expanded="true" />
+                <element signature="e#3221#3229#0" expanded="true" />
+                <element signature="e#3720#3758#0" expanded="true" />
+                <element signature="e#4182#4190#0" expanded="true" />
+                <element signature="e#5258#5266#0" expanded="true" />
+                <element signature="e#6944#6961#0" expanded="true" />
+                <element signature="e#7539#7540#0" expanded="true" />
+                <element signature="e#7589#7590#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,40 +76,28 @@
       <file leaf-file-name="WikiField.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/WikiField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#441#442#0" expanded="true" />
-                <element signature="e#475#476#0" expanded="true" />
-                <element signature="e#507#508#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
+                <element signature="e#412#413#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#478#479#0" expanded="true" />
+                <element signature="e#510#511#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/mainwindow/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#267#268#0" expanded="true" />
                 <element signature="e#295#296#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainWindow.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainWindow.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -120,8 +107,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -129,6 +116,7 @@
     <findStrings>
       <find>hiddenBornAndDead</find>
       <find>extractContent</find>
+      <find>System.out</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,10 +137,11 @@
         <option value="$PROJECT_DIR$/src/main/java/content/connection/Connection.java" />
         <option value="$PROJECT_DIR$/src/main/java/content/connection/ConnectionConvert.java" />
         <option value="$PROJECT_DIR$/src/main/java/content/WikipediaContent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/content/connection/WikiField.java" />
-        <option value="$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/mainwindow/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/MainWindow2.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/content/connection/WikiField.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java" />
       </list>
     </option>
   </component>
@@ -186,6 +175,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -255,8 +246,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -437,7 +426,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -447,15 +444,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#initialize#0;class#MainController#0" expanded="false" />
-            <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
+            <element signature="method#removeSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#unexpandAllClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
             <element signature="method#setViews#0;class#MainController#0" expanded="false" />
+            <element signature="e#6111#6119#0" expanded="true" />
             <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#recoverList#0;class#MainController#0" expanded="false" />
@@ -475,18 +472,14 @@
             <element signature="imports" expanded="true" />
             <element signature="method#downloadNewDocument#0;class#ConnectionHandler#0" expanded="false" />
             <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#extractContent#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#2682#2690#0" expanded="true" />
-            <element signature="e#3595#3603#0" expanded="true" />
-            <element signature="method#extractBornDeath#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#4128#4166#0" expanded="true" />
-            <element signature="e#4593#4601#0" expanded="true" />
-            <element signature="method#extractTreeItem#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#5748#5756#0" expanded="true" />
-            <element signature="class#MonthConversion#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#7693#7710#0" expanded="true" />
-            <element signature="e#8288#8289#0" expanded="true" />
-            <element signature="e#8338#8339#0" expanded="true" />
+            <element signature="e#2442#2450#0" expanded="true" />
+            <element signature="e#3221#3229#0" expanded="true" />
+            <element signature="e#3720#3758#0" expanded="true" />
+            <element signature="e#4182#4190#0" expanded="true" />
+            <element signature="e#5258#5266#0" expanded="true" />
+            <element signature="e#6944#6961#0" expanded="true" />
+            <element signature="e#7539#7540#0" expanded="true" />
+            <element signature="e#7589#7590#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -496,6 +489,7 @@
         <state relative-caret-position="180">
           <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#267#268#0" expanded="true" />
             <element signature="e#295#296#0" expanded="true" />
           </folding>
@@ -518,15 +512,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#initialize#0;class#MainController#0" expanded="false" />
-            <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
+            <element signature="method#removeSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#unexpandAllClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
             <element signature="method#setViews#0;class#MainController#0" expanded="false" />
+            <element signature="e#6111#6119#0" expanded="true" />
             <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#recoverList#0;class#MainController#0" expanded="false" />
@@ -546,18 +540,14 @@
             <element signature="imports" expanded="true" />
             <element signature="method#downloadNewDocument#0;class#ConnectionHandler#0" expanded="false" />
             <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#extractContent#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#2682#2690#0" expanded="true" />
-            <element signature="e#3595#3603#0" expanded="true" />
-            <element signature="method#extractBornDeath#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#4128#4166#0" expanded="true" />
-            <element signature="e#4593#4601#0" expanded="true" />
-            <element signature="method#extractTreeItem#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#5748#5756#0" expanded="true" />
-            <element signature="class#MonthConversion#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#7693#7710#0" expanded="true" />
-            <element signature="e#8288#8289#0" expanded="true" />
-            <element signature="e#8338#8339#0" expanded="true" />
+            <element signature="e#2442#2450#0" expanded="true" />
+            <element signature="e#3221#3229#0" expanded="true" />
+            <element signature="e#3720#3758#0" expanded="true" />
+            <element signature="e#4182#4190#0" expanded="true" />
+            <element signature="e#5258#5266#0" expanded="true" />
+            <element signature="e#6944#6961#0" expanded="true" />
+            <element signature="e#7539#7540#0" expanded="true" />
+            <element signature="e#7589#7590#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -567,6 +557,7 @@
         <state relative-caret-position="180">
           <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#267#268#0" expanded="true" />
             <element signature="e#295#296#0" expanded="true" />
           </folding>
@@ -608,15 +599,15 @@
         <state relative-caret-position="36">
           <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#initialize#0;class#MainController#0" expanded="false" />
-            <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
+            <element signature="method#removeSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#unexpandAllClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
             <element signature="method#setViews#0;class#MainController#0" expanded="false" />
+            <element signature="e#6111#6119#0" expanded="true" />
             <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#recoverList#0;class#MainController#0" expanded="false" />
@@ -633,6 +624,7 @@
         <state relative-caret-position="288">
           <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#267#268#0" expanded="true" />
             <element signature="e#295#296#0" expanded="true" />
           </folding>
@@ -648,32 +640,78 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionConvert.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/content/WikipediaContent.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainWindow2.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/WikiField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/MainWindow.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="334">
+          <caret line="101" column="67" lean-forward="true" selection-start-line="101" selection-start-column="67" selection-end-line="101" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content/WikipediaContent.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/mainwindow/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="201" column="1" lean-forward="true" selection-start-line="201" selection-start-column="1" selection-end-line="201" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#downloadNewDocument#0;class#ConnectionHandler#0" expanded="false" />
+            <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
+            <element signature="e#2442#2450#0" expanded="true" />
+            <element signature="e#3221#3229#0" expanded="true" />
+            <element signature="e#3720#3758#0" expanded="true" />
+            <element signature="e#4182#4190#0" expanded="true" />
+            <element signature="e#5258#5266#0" expanded="true" />
+            <element signature="e#6944#6961#0" expanded="true" />
+            <element signature="e#7539#7540#0" expanded="true" />
+            <element signature="e#7589#7590#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="150" column="16" lean-forward="false" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
+          <folding>
             <element signature="method#initialize#0;class#MainController#0" expanded="false" />
-            <element signature="method#connectionClick#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYearsButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#searchPhraseButtonClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#addSelectedItemClicked#0;class#MainController#0" expanded="false" />
+            <element signature="method#removeSelectedItemClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#unexpandAllClicked#0;class#MainController#0" expanded="false" />
             <element signature="method#setViewSelectionListeners#0;class#MainController#0" expanded="false" />
             <element signature="method#setViews#0;class#MainController#0" expanded="false" />
+            <element signature="e#6111#6119#0" expanded="true" />
             <element signature="method#addTextValueChangeListener#0;class#MainController#0" expanded="false" />
             <element signature="method#filterYears#0;class#MainController#0" expanded="false" />
             <element signature="method#recoverList#0;class#MainController#0" expanded="false" />
@@ -681,54 +719,6 @@
             <element signature="method#addSelectedItem#0;class#MainController#0" expanded="false" />
             <element signature="method#expandItems#0;class#MainController#0" expanded="false" />
             <element signature="method#unexpandItems#0;class#MainController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/ConnectionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#downloadNewDocument#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#extractImieniny#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="method#extractContent#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#2682#2690#0" expanded="true" />
-            <element signature="e#3595#3603#0" expanded="true" />
-            <element signature="method#extractBornDeath#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#4128#4166#0" expanded="true" />
-            <element signature="e#4593#4601#0" expanded="true" />
-            <element signature="method#extractTreeItem#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#5748#5756#0" expanded="true" />
-            <element signature="class#MonthConversion#0;class#ConnectionHandler#0" expanded="false" />
-            <element signature="e#7693#7710#0" expanded="true" />
-            <element signature="e#8288#8289#0" expanded="true" />
-            <element signature="e#8338#8339#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content/connection/WikiField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding>
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mainwindow/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
           </folding>
         </state>
       </provider>

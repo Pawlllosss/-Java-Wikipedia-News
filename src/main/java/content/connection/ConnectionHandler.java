@@ -7,18 +7,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
 public class ConnectionHandler {
     Document docWiki;
-
-    public Document getDocWiki() {
-        return docWiki;
-    }
-
 
     public ConnectionHandler(LocalDate selectedDate) {
         downloadNewDocument(selectedDate);
@@ -27,7 +21,6 @@ public class ConnectionHandler {
     public void downloadNewDocument(LocalDate selectedDate) {
         int choosenDay = selectedDate.getDayOfMonth();
         String choosenMonth = MonthConversion.monthToString(selectedDate.getMonthValue());
-
 
         try {
             docWiki = Jsoup.connect("https://pl.wikipedia.org/wiki/" + choosenDay + "_" + choosenMonth).get();
@@ -42,12 +35,9 @@ public class ConnectionHandler {
 
         Element imieninyElement = imieniny.get(0).select("li").first();
         String imieninyLine = imieninyElement.text();
-        //getting rid of words and letters that aren't needed
+        //gettingg rid of words and letters that aren't needed
         imieninyLine = imieninyLine.replace("Imieniny obchodzą: ", "").replace(" i", ",").replace(".", "");
 
-
-        //przechowuje imiona na dany dzien
-        //ArrayList<String> imieninyArray = new ArrayList<String>();
         ObservableList imieninyArray = FXCollections.observableArrayList();
 
         //lista imion obchodzących imieniny
@@ -60,19 +50,18 @@ public class ConnectionHandler {
     public TreeItem<String> extractContent(WikiField whichField) {
         //create an item for the view
         TreeItem<String> rootItem = new TreeItem<String>(whichField.fieldName());
-        //rootItem.setExpanded(true);
 
         //extract webcontent
         Elements swieta = docWiki.select(".mw-parser-output > ul");
 
-
+        //omit first element (Imieniny)
         boolean first_element = false;
 
         //if we want to check święta
         if (whichField.fieldNumber() == 0)
             first_element = true;
 
-        // > li aby pobierać tylko "najwyższe" elementy, żeby pomijać powtórzenia przy zagnieżdżonej liście
+        // "> li" so it won't count nested list
         for (Element swieto : swieta.get(whichField.fieldNumber()).select("> li")) {
             //omit first part (with names)
             if (first_element) {
@@ -81,15 +70,12 @@ public class ConnectionHandler {
             }
 
             TreeItem<String> countryItem = new TreeItem<String>();
-            //countryItem.setExpanded(true);
 
-            //sprawdzam czy jest więcej niż jedno świeto
+            //check whether it's a list
             Elements listaSwiat = swieto.select("ul");
             if (!listaSwiat.isEmpty()) {
-
                 String country = swieto.select("a").get(0).text();
                 countryItem.setValue(country);
-
 
                 for (Element zListy : listaSwiat.get(0).select("li")) {
                     TreeItem<String> swietoItem = new TreeItem<String>(zListy.text());
@@ -97,8 +83,7 @@ public class ConnectionHandler {
                 }
 
             } else {
-                //nie działa tak jak chce, chyba przelatuje też po dzieciach, w sensie główny selector swietaImieniny.get(0).select("li")
-                String[] swietoString = swieto.text().split(" – ", 2);
+                String[] swietoString = swieto.text().split(" – | ", 2);//sometimes " - " separates year and description and sometimes " "
 
                 countryItem.setValue(swietoString[0]);
                 TreeItem<String> swietoItem = new TreeItem<String>(swietoString[1]);
@@ -116,20 +101,18 @@ public class ConnectionHandler {
         TreeItem<String> rootItem = new TreeItem<String>("Urodzili się/zmarli");
         rootItem.setExpanded(true);
 
-        //przechowuje dla danego roku listę zmarłych i narodzonych ( w formie tree item)
+        //stores for year - key node with dead or born
         TreeMap<Integer, ArrayList<TreeItem<String>>> treeItemMap = new TreeMap<Integer, ArrayList<TreeItem<String>>>();
-
 
         //get born/death and year
         extractTreeItem(WikiField.Born, treeItemMap);
         extractTreeItem(WikiField.Dead, treeItemMap);
 
-        //z mapy wyciągam rok - tworzę z niego itema, do którego podpinam itemy z arraylisty
-
+        //I take year from the map, create a node with child nodes taken from the arraylist
         for ( Integer year : treeItemMap.keySet() ){
             ArrayList<TreeItem<String>> mapValue = treeItemMap.get(year);
 
-            TreeItem<String> yearTreeItem = new TreeItem<String>(year.toString()); //ZMIENIĆ YEAR NA STRING!!!!
+            TreeItem<String> yearTreeItem = new TreeItem<String>(year.toString());
             rootItem.getChildren().add(yearTreeItem);
 
             for ( TreeItem<String> treeItem : mapValue)
@@ -137,7 +120,6 @@ public class ConnectionHandler {
         }
 
         return rootItem;
-
     }
 
     private void extractTreeItem(WikiField whichField, TreeMap<Integer, ArrayList<TreeItem<String>>> treeItemMap) {
@@ -150,15 +132,14 @@ public class ConnectionHandler {
         if( (extractedElements.size() == 6) && (whichField == WikiField.Born || whichField == WikiField.Dead) ) //field check in case if some other elements would be called in future
             offset = 1;//set proper offset if there's an astronomy field
 
-        // > li aby pobierać tylko "najwyższe" elementy, żeby pomijać powtórzenia przy zagnieżdżonej liście
+        //         // "> li" so it won't count nested list
         for (Element element : extractedElements.get(whichField.fieldNumber() + offset).select("> li")) {
 
             TreeItem<String> bornDeathItem = new TreeItem<String>(whichField.fieldName());
             bornDeathItem.setExpanded(true);
 
-            Integer year;//przechowuje rok
+            Integer year;
 
-            //sprawdzam czy jest więcej niż jedno świeto
             Elements peopleList = element.select("ul");
             if (!peopleList.isEmpty()) {
                 year = Integer.valueOf(element.select("a").get(0).text().replaceAll("[^\\d]", ""));//replace all aby mieć tylko cyfry(niektóre wpisy mają dwukropek)
@@ -172,29 +153,24 @@ public class ConnectionHandler {
             } else {
                 String[] personString = element.text().split(" – ", 2);
                 year = Integer.valueOf(personString[0].replaceAll("[^\\d]", ""));
-
-                System.out.println( personString[0] + personString[1]);
-
                 TreeItem<String> personItem = new TreeItem<String>(personString[1]);
                 bornDeathItem.getChildren().add(personItem);
-
             }
 
 
-            //tworzę mapę przechowującą itemy dla danego roku, potem ich zawartość dodaję do itemu dla danego roku, który jest dzieckiem root(ale to robi inna funkcja)
+            //I created map that stores node for related year, so I can add it to the item for item related to the year(this is done by a different function)
 
-            //dołączanie przetworzonego itema
+            //add proccesed item
             ArrayList<TreeItem<String>> mapValue = treeItemMap.get(year);
 
-            //jeżeli nie dodawano nic do wpisu dla tego roku
+            //if mapItem wasnt yet created for this year
             if (mapValue == null) {
                 mapValue = new ArrayList<TreeItem<String>>();
                 treeItemMap.put(year, mapValue);
             }
 
-            mapValue.add(bornDeathItem);//operuję właśnie na born deathItem - do tego dołączam jako dzieci kolejnych ludzi
+            mapValue.add(bornDeathItem);
         }
-
     }
 
     private static class MonthConversion

@@ -2,8 +2,8 @@ package content.connection;
 
 public enum WikiField {
     Swieta(0, "Święta"),
-    PolskaEvents(1, "Wydarzenia w Polsce"),
-    WorldEvents(2, "Wydarzenia na Świecie"),
+    PolskaEvents(1, "Polska"),
+    WorldEvents(2, "Świat"),
     Born(3, "Urodzili się"),
     Dead(4, "Zmarli");
 
